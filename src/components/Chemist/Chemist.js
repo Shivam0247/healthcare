@@ -33,7 +33,7 @@ const statusColorMap = {
 
 const INITIAL_VISIBLE_COLUMNS = ["name", "category", "status", "actions"];
 
-export default function Hospital() {
+export default function Chemist() {
   const [filterValue, setFilterValue] = React.useState("");
   const [selectedKeys, setSelectedKeys] = React.useState(new Set([]));
   const [visibleColumns, setVisibleColumns] = React.useState(
@@ -243,7 +243,7 @@ export default function Hospital() {
         </div>
         <div className="flex justify-between items-center">
           <span className="text-default-400 text-small">
-            Total {users.length} Hospitals
+            Total {users.length} Chemists
           </span>
           <label className="flex items-center text-default-400 text-small">
             Rows per page:
@@ -312,13 +312,12 @@ export default function Hospital() {
       <div className="flex flex-col flex-wrap gap-4 mb-[2em]">
         <Breadcrumbs size="md">
           <BreadcrumbItem>Dashboard</BreadcrumbItem>
-          <BreadcrumbItem>Hospitals</BreadcrumbItem>
+          <BreadcrumbItem>Chemist</BreadcrumbItem>
         </Breadcrumbs>
       </div>
       <div className="flex flex-col gap-4 mb-8 flex-wrap">
-        <h1 className="text-3xl font-bold text-gray-800">Hospitals</h1>
+        <h1 className="text-3xl font-bold text-gray-800">Chemist</h1>
       </div>
-
       <Table
         aria-label="Example table with custom cells, pagination and sorting"
         bottomContent={bottomContent}
