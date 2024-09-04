@@ -17,7 +17,7 @@ import {
   Pagination,
 } from "@nextui-org/react";
 import { Breadcrumbs, BreadcrumbItem } from "@nextui-org/react";
-
+import { useNavigate } from "react-router-dom";
 import { PlusIcon } from "./PlusIcon";
 import { VerticalDotsIcon } from "./VerticalDotsIcon";
 import { SearchIcon } from "./SearchIcon";
@@ -46,6 +46,11 @@ export default function Chemist() {
     direction: "ascending",
   });
   const [page, setPage] = React.useState(1);
+
+  const navigate = useNavigate();
+  const NavigateToView = () => {
+    navigate("/Chemist/ChemistView");
+  };
 
   const hasSearchFilter = Boolean(filterValue);
 
@@ -133,7 +138,7 @@ export default function Chemist() {
                 </Button>
               </DropdownTrigger>
               <DropdownMenu>
-                <DropdownItem>View</DropdownItem>
+                <DropdownItem onPress={NavigateToView}>View</DropdownItem>
               </DropdownMenu>
             </Dropdown>
           </div>

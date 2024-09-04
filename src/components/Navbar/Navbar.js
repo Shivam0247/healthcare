@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Hospital from "../Hospital/Hospital";
 import Chemist from "../Chemist/Chemist";
-
+import HospitalView from "../HospitalView/HospitalView";
+import ChemistView from "../ChemistView/ChemistView";
 function Navbar() {
   // State to manage sidebar visibility
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -118,6 +119,8 @@ function Navbar() {
           <Routes>
             <Route path="/Hospital" element={<Hospital />} />
             <Route path="/Chemist" element={<Chemist />} />
+            <Route path="/Hospital/HospitalView" element={<HospitalView />} />
+            <Route path="/Chemist/ChemistView" element={<ChemistView />} />
 
             {/* Add other routes here */}
           </Routes>

@@ -17,7 +17,7 @@ import {
   Pagination,
 } from "@nextui-org/react";
 import { Breadcrumbs, BreadcrumbItem } from "@nextui-org/react";
-
+import { Navigate, useNavigate } from "react-router-dom";
 import { PlusIcon } from "./PlusIcon";
 import { VerticalDotsIcon } from "./VerticalDotsIcon";
 import { SearchIcon } from "./SearchIcon";
@@ -56,6 +56,11 @@ export default function Hospital() {
       Array.from(visibleColumns).includes(column.uid)
     );
   }, [visibleColumns]);
+
+  const navigate = useNavigate();
+  const NavigateToView = () => {
+    navigate("/Hospital/HospitalView");
+  };
 
   const filteredItems = React.useMemo(() => {
     let filteredUsers = [...users];
@@ -133,7 +138,7 @@ export default function Hospital() {
                 </Button>
               </DropdownTrigger>
               <DropdownMenu>
-                <DropdownItem>View</DropdownItem>
+                <DropdownItem onPress={NavigateToView}>View</DropdownItem>
               </DropdownMenu>
             </Dropdown>
           </div>
