@@ -316,7 +316,7 @@ export default function Hospital() {
     <>
       <div className="flex flex-col flex-wrap gap-4 mb-[2em]">
         <Breadcrumbs size="md">
-          <BreadcrumbItem>Dashboard</BreadcrumbItem>
+          <BreadcrumbItem href="/">Dashboard</BreadcrumbItem>
           <BreadcrumbItem>Hospitals</BreadcrumbItem>
         </Breadcrumbs>
       </div>

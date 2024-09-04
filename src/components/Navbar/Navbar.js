@@ -110,6 +110,17 @@ function Navbar() {
                   <span className="flex-1 ms-3 whitespace-nowrap">Chemist</span>
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/Chemist"
+                  className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                >
+                  <i class="fa-solid fa-gear"></i>
+                  <span className="flex-1 ms-3 whitespace-nowrap">
+                    Settings
+                  </span>
+                </Link>
+              </li>
             </ul>
           </div>
         </aside>
