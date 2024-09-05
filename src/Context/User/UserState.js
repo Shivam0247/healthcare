@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect } from "react";
 import UserContext from "./UserContext";
 
 const UserState = ({ children }) => {
-  const host = "https://healthcarebackend.vercel.app/";
+  const host = "https://healthcarebackend.vercel.app";
   const [authToken, setAuthToken] = useState(
     localStorage.getItem("authToken") || null
   );
