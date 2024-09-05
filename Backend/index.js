@@ -10,6 +10,10 @@ const port = 4000;
 app.use(cors());
 app.use(express.json());
 
+app.use("/", (req, res) => {
+  res.json("Hello");
+});
+
 app.use("/api/auth", require("./routes/user"));
 
 const server = app.listen(port, () => {
