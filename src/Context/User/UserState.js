@@ -43,14 +43,13 @@ const UserState = ({ children }) => {
       });
       const data = await response.json();
       if (response.ok) {
-        setAuthToken(data.authtoken);
-        localStorage.setItem("authToken", data.authtoken);
-        await fetchUser();
+        return { success: true, data }; // Ensure this structure is returned
       } else {
-        console.error("Login error:", data.error);
+        return { success: false, error: data.error };
       }
     } catch (error) {
       console.error("Error logging in:", error);
+      return { success: false, error: error.message };
     }
   };
 

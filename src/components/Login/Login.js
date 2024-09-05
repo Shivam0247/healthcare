@@ -1,8 +1,37 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import { Tabs, Tab, Card, CardBody } from "@nextui-org/react";
 import { Link } from "react-router-dom";
-
+import UserContext from "../../Context/User/UserContext";
+import { useNavigate } from "react-router-dom";
 export default function Login() {
+  const navigate = useNavigate();
+  const userrContext = useContext(UserContext);
+  const { user, authToken, registerUser, loginUser, logoutUser } = userrContext;
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  // Handle input changes
+  const handleEmailChange = (e) => setEmail(e.target.value);
+  const handlePasswordChange = (e) => setPassword(e.target.value);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(email);
+    console.log(password);
+
+    try {
+      const result = await loginUser(email, password);
+
+      if (result && result.success) {
+        navigate("/user/Dashboard");
+      } else {
+        console.error("Login failed:", result?.error || "Unknown error");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
+  };
+
   return (
     <div className="flex w-full h-[100vh] justify-center items-center flex-col bg-gray-50">
       <Tabs aria-label="Options" className="w-[85vw] sm:w-[40vw]">
@@ -174,6 +203,7 @@ export default function Login() {
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="name@company.com"
                         required=""
+                        onChange={handleEmailChange}
                       />
                     </div>
                     <div>
@@ -201,13 +231,15 @@ export default function Login() {
                           placeholder="••••••••"
                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                           required=""
+                          onChange={handlePasswordChange}
                         />
                       </div>
                     </div>
                     <div>
                       <button
-                        type="submit"
+                        // type="submit"
                         class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        onClick={handleSubmit}
                       >
                         Sign in
                       </button>
