@@ -9,7 +9,7 @@ const port = 4000;
 
 app.use(
   cors({
-    origin: ["https://healthcarepdeu.vercel.app/"],
+    origin: ["https://healthcarepdeu.vercel.app"],
     methods: ["POST", "GET"],
     credentials: true,
   })
