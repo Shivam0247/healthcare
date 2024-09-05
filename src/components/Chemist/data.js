@@ -4,9 +4,8 @@ const columns = [
   { name: "NAME", uid: "name", sortable: true },
   { name: "AGE", uid: "age", sortable: true },
   { name: "CATEGORY", uid: "category", sortable: true },
-  { name: "TEAM", uid: "team" },
   { name: "EMAIL", uid: "email" },
-  { name: "STATUS", uid: "status", sortable: true },
+  { name: "AVAILABILITY", uid: "availability", sortable: true },
   { name: "ACTIONS", uid: "actions" },
 ];
 

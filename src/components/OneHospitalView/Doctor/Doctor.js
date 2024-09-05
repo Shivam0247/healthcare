@@ -32,13 +32,14 @@ const statusColorMap = {
 
 const INITIAL_VISIBLE_COLUMNS = [
   "name",
-  "category",
+  "specialist",
   "availability",
+  "email",
+  "contact",
   "actions",
-  "discharges",
 ];
 
-export default function Hospital() {
+export default function Doctor() {
   const [filterValue, setFilterValue] = React.useState("");
   const [selectedKeys, setSelectedKeys] = React.useState(new Set([]));
   const [visibleColumns, setVisibleColumns] = React.useState(
@@ -150,6 +151,8 @@ export default function Hospital() {
               </DropdownTrigger>
               <DropdownMenu>
                 <DropdownItem onPress={NavigateToView}>View</DropdownItem>
+                <DropdownItem>Edit</DropdownItem>
+                <DropdownItem>Delete </DropdownItem>
               </DropdownMenu>
             </Dropdown>
           </div>
@@ -252,9 +255,9 @@ export default function Hospital() {
                 ))}
               </DropdownMenu>
             </Dropdown>
-            {/* <Button color="primary" endContent={<PlusIcon />}>
+            <Button color="primary" endContent={<PlusIcon />}>
               Add New
-            </Button> */}
+            </Button>
           </div>
         </div>
         <div className="flex justify-between items-center">
@@ -328,11 +331,11 @@ export default function Hospital() {
       <div className="flex flex-col flex-wrap gap-4 mb-[2em]">
         <Breadcrumbs size="md">
           <BreadcrumbItem href="/">Dashboard</BreadcrumbItem>
-          <BreadcrumbItem>Hospitals</BreadcrumbItem>
+          <BreadcrumbItem>Doctors</BreadcrumbItem>
         </Breadcrumbs>
       </div>
       <div className="flex flex-col gap-4 mb-8 flex-wrap">
-        <h1 className="text-3xl font-bold text-gray-800">Hospitals</h1>
+        <h1 className="text-3xl font-bold text-gray-800">Doctors</h1>
       </div>
 
       <Table
