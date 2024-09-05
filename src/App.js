@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Signup from "./components/Signup/Signup";
 import Login from "./components/Login/Login";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -14,9 +14,13 @@ function App() {
 
   return (
     <div>
-      {/* {!isLoggedIn && <Signup onLogin={handleLogin} />} */}
-      {/* {isLoggedIn && <Navbar />} */}
-      <Login />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/user/*" element={<Navbar />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

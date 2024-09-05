@@ -59,7 +59,7 @@ export default function Hospital() {
 
   const navigate = useNavigate();
   const NavigateToView = () => {
-    navigate("/Hospital/HospitalView");
+    navigate("/user/Hospital/HospitalView");
   };
 
   const filteredItems = React.useMemo(() => {

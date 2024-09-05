@@ -49,7 +49,7 @@ export default function Chemist() {
 
   const navigate = useNavigate();
   const NavigateToView = () => {
-    navigate("/Chemist/ChemistView");
+    navigate("/user/Chemist/ChemistView");
   };
 
   const hasSearchFilter = Boolean(filterValue);
