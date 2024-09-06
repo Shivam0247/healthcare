@@ -296,7 +296,7 @@ export default function Dashboard() {
           <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
             {metricsData.map((metrics, index) => (
               <div
-                className="p-5 bg-gray-100 rounded-large shadow-smrounded-sm mb-5"
+                className="mb-5 p-4 z-0 flex flex-col relative justify-between gap-4 bg-content1 overflow-auto rounded-large shadow-small w-full"
                 key={index}
               >
                 <div className="text-base text-gray-400">{metrics.title}</div>
@@ -349,7 +349,7 @@ export default function Dashboard() {
               </div>
             ))}
           </div>
-          <div className="p-5 bg-white rounded-lg shadow">
+          <div className="mb-5 p-4 z-0 flex flex-col relative justify-between gap-4 bg-content1 overflow-auto rounded-large shadow-small w-full">
             <div className="flex items-center">
               <div className="w-12 h-12 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center me-3">
                 <svg
@@ -374,7 +374,7 @@ export default function Dashboard() {
             />
           </div>
           <div className="grid grid-cols-1 gap-4 mt-8 lg:grid-cols-2 xl:grid-cols-3 w-[100vw]">
-            <div className="p-5 bg-white rounded-lg shadow w-[35vw] mr-[2rem]">
+            <div className="mb-5 p-4 flex flex-col relative justify-between gap-4 bg-content1 overflow-auto rounded-large shadow-small w-[33vw] ">
               <div className="flex items-center">
                 <div className="w-12 h-12 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center me-3">
                   <svg
@@ -398,7 +398,7 @@ export default function Dashboard() {
                 height={320}
               />
             </div>
-            <div className="p-5 bg-white rounded-lg shadow w-[40vw] ml-9">
+            <div className="mb-5 p-4 justify-between gap-4 overflow-auto rounded-large shadow-small w-[42vw]">
               <div className="flex items-center">
                 <div className="w-12 h-12 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center me-3">
                   <svg
