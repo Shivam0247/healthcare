@@ -1,9 +1,9 @@
-// data.js
 const columns = [
   { name: "NAME", uid: "name", sortable: true },
   { name: "AGE", uid: "age", sortable: true },
   { name: "EMAIL", uid: "email", sortable: true },
   { name: "CONTACT", uid: "contact" },
+  { name: "DISEASE", uid: "disease", sortable: true },
   { name: "STATUS", uid: "status", sortable: true },
   { name: "ACTIONS", uid: "actions" },
 ];
@@ -21,6 +21,7 @@ const users = [
     age: 34,
     email: "john.doe@example.com",
     contact: "+1-555-1234",
+    disease: { name: "Common Cold", severity: "non-serious" },
     status: "Admitted",
   },
   {
@@ -29,6 +30,7 @@ const users = [
     age: 29,
     email: "jane.smith@example.com",
     contact: "+1-555-5678",
+    disease: { name: "Pneumonia", severity: "serious" },
     status: "Discharged",
   },
   {
@@ -37,6 +39,7 @@ const users = [
     age: 47,
     email: "michael.brown@example.com",
     contact: "+1-555-8765",
+    disease: { name: "Diabetes", severity: "serious" },
     status: "UnderTreatment",
   },
   {
@@ -45,6 +48,7 @@ const users = [
     age: 55,
     email: "emily.davis@example.com",
     contact: "+1-555-4321",
+    disease: { name: "Hypertension", severity: "non-serious" },
     status: "Admitted",
   },
   {
@@ -53,6 +57,7 @@ const users = [
     age: 42,
     email: "sarah.wilson@example.com",
     contact: "+1-555-9876",
+    disease: { name: "COVID-19", severity: "serious" },
     status: "Discharged",
   },
   {
@@ -61,6 +66,7 @@ const users = [
     age: 36,
     email: "david.johnson@example.com",
     contact: "+1-555-6543",
+    disease: { name: "Asthma", severity: "non-serious" },
     status: "UnderTreatment",
   },
   {
@@ -69,6 +75,7 @@ const users = [
     age: 63,
     email: "laura.martinez@example.com",
     contact: "+1-555-3210",
+    disease: { name: "Heart Disease", severity: "serious" },
     status: "Admitted",
   },
   {
@@ -77,6 +84,7 @@ const users = [
     age: 31,
     email: "chris.taylor@example.com",
     contact: "+1-555-6789",
+    disease: { name: "Migraine", severity: "non-serious" },
     status: "UnderTreatment",
   },
   {
@@ -85,6 +93,7 @@ const users = [
     age: 27,
     email: "anna.anderson@example.com",
     contact: "+1-555-5432",
+    disease: { name: "Tuberculosis", severity: "serious" },
     status: "Discharged",
   },
   {
@@ -93,6 +102,7 @@ const users = [
     age: 50,
     email: "james.clark@example.com",
     contact: "+1-555-1098",
+    disease: { name: "Common Cold", severity: "non-serious" },
     status: "Admitted",
   },
 ];

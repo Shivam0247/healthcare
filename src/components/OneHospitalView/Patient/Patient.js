@@ -13,11 +13,10 @@ import {
   DropdownMenu,
   DropdownItem,
   Chip,
-  User,
   Pagination,
 } from "@nextui-org/react";
 import { Breadcrumbs, BreadcrumbItem } from "@nextui-org/react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { PlusIcon } from "./PlusIcon";
 import { VerticalDotsIcon } from "./VerticalDotsIcon";
 import { SearchIcon } from "./SearchIcon";
@@ -110,6 +109,10 @@ export default function Patient() {
   const renderCell = React.useCallback((user, columnKey) => {
     const cellValue = user[columnKey];
 
+    if (typeof cellValue === "object") {
+      return <span>{JSON.stringify(cellValue)}</span>; // Handle objects
+    }
+
     switch (columnKey) {
       case "name":
         return (
@@ -127,7 +130,7 @@ export default function Patient() {
         return (
           <Chip
             className="capitalize"
-            color={statusColorMap[user.availability]}
+            color={statusColorMap[cellValue] || "default"} // Fallback color
             size="sm"
             variant="flat"
           >
@@ -158,7 +161,7 @@ export default function Patient() {
           </div>
         );
       default:
-        return cellValue;
+        return cellValue; // Ensure this is a string or number
     }
   }, []);
 
@@ -220,7 +223,7 @@ export default function Patient() {
                 disallowEmptySelection
                 aria-label="Table Columns"
                 closeOnSelect={false}
-                selectedKeys={statusFilter}
+                selectedKeys={Array.from(statusFilter)} // Convert Set to Array
                 selectionMode="multiple"
                 onSelectionChange={setStatusFilter}
               >
@@ -244,7 +247,7 @@ export default function Patient() {
                 disallowEmptySelection
                 aria-label="Table Columns"
                 closeOnSelect={false}
-                selectedKeys={visibleColumns}
+                selectedKeys={Array.from(visibleColumns)} // Convert Set to Array
                 selectionMode="multiple"
                 onSelectionChange={setVisibleColumns}
               >
@@ -291,7 +294,7 @@ export default function Patient() {
     return (
       <div className="py-2 px-2 flex justify-between items-center">
         <span className="w-[30%] text-small text-default-400">
-          {selectedKeys === "all"
+          {selectedKeys.size === users.length
             ? "All items selected"
             : `${selectedKeys.size} of ${filteredItems.length} selected`}
         </span>
@@ -301,33 +304,15 @@ export default function Patient() {
           showShadow
           color="primary"
           page={page}
-          total={pages}
-          onChange={setPage}
+          onPageChange={setPage}
+          totalPages={pages}
         />
-        <div className="hidden sm:flex w-[30%] justify-end gap-2">
-          <Button
-            isDisabled={pages === 1}
-            size="sm"
-            variant="flat"
-            onPress={onPreviousPage}
-          >
-            Previous
-          </Button>
-          <Button
-            isDisabled={pages === 1}
-            size="sm"
-            variant="flat"
-            onPress={onNextPage}
-          >
-            Next
-          </Button>
-        </div>
       </div>
     );
-  }, [selectedKeys, items.length, page, pages, hasSearchFilter]);
+  }, [page, pages, selectedKeys.size, filteredItems.length]);
 
   return (
-    <>
+    <div>
       <div className="flex flex-col flex-wrap gap-4 mb-[2em]">
         <Breadcrumbs size="md">
           <BreadcrumbItem href="/">Dashboard</BreadcrumbItem>
@@ -342,12 +327,7 @@ export default function Patient() {
         aria-label="Example table with custom cells, pagination and sorting"
         bottomContent={bottomContent}
         bottomContentPlacement="outside"
-        classNames={
-          {
-            //   wrapper: "max-h-[382px]",
-          }
-        }
-        selectedKeys={selectedKeys}
+        selectedKeys={Array.from(selectedKeys)} // Convert Set to Array
         selectionMode="multiple"
         sortDescriptor={sortDescriptor}
         topContent={topContent}
@@ -376,6 +356,6 @@ export default function Patient() {
           )}
         </TableBody>
       </Table>
-    </>
+    </div>
   );
 }

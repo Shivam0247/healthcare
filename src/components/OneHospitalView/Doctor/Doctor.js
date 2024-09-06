@@ -1,5 +1,16 @@
 import React from "react";
 import {
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  useDisclosure,
+  Checkbox,
+  Link,
+} from "@nextui-org/react";
+
+import {
   Table,
   TableHeader,
   TableColumn,
@@ -40,6 +51,8 @@ const INITIAL_VISIBLE_COLUMNS = [
 ];
 
 export default function Doctor() {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
   const [filterValue, setFilterValue] = React.useState("");
   const [selectedKeys, setSelectedKeys] = React.useState(new Set([]));
   const [visibleColumns, setVisibleColumns] = React.useState(
@@ -255,7 +268,7 @@ export default function Doctor() {
                 ))}
               </DropdownMenu>
             </Dropdown>
-            <Button color="primary" endContent={<PlusIcon />}>
+            <Button color="primary" onPress={onOpen} endContent={<PlusIcon />}>
               Add New
             </Button>
           </div>
@@ -376,6 +389,57 @@ export default function Doctor() {
           )}
         </TableBody>
       </Table>
+
+      <Modal
+        isOpen={isOpen}
+        backdrop="blur"
+        onOpenChange={onOpenChange}
+        placement="top-center"
+        size="2xl"
+      >
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-1">
+                Add Doctor
+              </ModalHeader>
+              <ModalBody className="flex flex-row flex-wrap sm:flex-nowrap gap-4">
+                <Input
+                  autoFocus
+                  label="Name"
+                  placeholder="Enter Doctor's name"
+                  variant="bordered"
+                />
+                <Input
+                  label="Specialist"
+                  placeholder="Enter Doctor's Specialist"
+                  variant="bordered"
+                />
+              </ModalBody>
+              <ModalBody className="flex flex-row flex-wrap sm:flex-nowrap gap-4">
+                <Input
+                  label="Email"
+                  type="Email"
+                  placeholder="Enter Doctor's Email"
+                  variant="bordered"
+                />
+                <Input
+                  label="Contact"
+                  placeholder="Enter Doctor's Contact No."
+                  variant="bordered"
+                />
+              </ModalBody>
+
+              <ModalFooter>
+                <Button color="danger" variant="flat" onPress={onClose}>
+                  Close
+                </Button>
+                <Button color="primary">Add</Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
     </>
   );
 }

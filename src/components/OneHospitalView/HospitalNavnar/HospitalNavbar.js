@@ -6,6 +6,7 @@ import HospitalView from "../../HospitalView/HospitalView";
 import ChemistView from "../../ChemistView/ChemistView";
 import Doctor from "../Doctor/Doctor";
 import Patient from "../Patient/Patient";
+import Dashboard from "../Dashboard/Dashboard";
 
 function HospitalNavbar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -142,8 +143,9 @@ function HospitalNavbar() {
       </aside>
 
       {/* Main content area */}
-      <div className="p-4 sm:ml-64">
+      <div className="p-4 sm:ml-64 ">
         <Routes>
+          <Route path="/Dashboard" element={<Dashboard />} />
           <Route path="/Doctors" element={<Doctor />} />
           <Route path="/Patients" element={<Patient />} />
           {/* <Route path="/Hospital/HospitalView" element={<HospitalView />} />
