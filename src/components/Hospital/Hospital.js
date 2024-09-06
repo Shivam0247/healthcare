@@ -35,6 +35,7 @@ const INITIAL_VISIBLE_COLUMNS = [
   "category",
   "availability",
   "actions",
+  "availableBeds",
   "discharges",
 ];
 

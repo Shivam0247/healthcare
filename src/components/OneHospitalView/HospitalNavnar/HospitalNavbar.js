@@ -7,6 +7,7 @@ import ChemistView from "../../ChemistView/ChemistView";
 import Doctor from "../Doctor/Doctor";
 import Patient from "../Patient/Patient";
 import Dashboard from "../Dashboard/Dashboard";
+import PatientRequest from "../PatientRequest/PatientRequest";
 
 function HospitalNavbar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -70,14 +71,18 @@ function HospitalNavbar() {
             </svg>
           </button>
 
-          <a href="/" className="flex items-center ps-2.5 mb-5">
+          <a
+            href="/Hospital/Dashboard"
+            className="flex items-center ps-2.5 mb-5"
+          >
+            {/* <i class="fa-solid fa-link h-6 me-3 sm:h-7 text-[26px] text-blue-800"></i> */}
             <img
               src="https://flowbite.com/docs/images/logo.svg"
               className="h-6 me-3 sm:h-7"
               alt="Flowbite Logo"
             />
-            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-              Healthcare
+            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white ">
+              HealthLink
             </span>
           </a>
 
@@ -148,6 +153,7 @@ function HospitalNavbar() {
           <Route path="/Dashboard" element={<Dashboard />} />
           <Route path="/Doctors" element={<Doctor />} />
           <Route path="/Patients" element={<Patient />} />
+          <Route path="/Patientsrequest" element={<PatientRequest />} />
           {/* <Route path="/Hospital/HospitalView" element={<HospitalView />} />
           <Route path="/Chemist/ChemistView" element={<ChemistView />} /> */}
         </Routes>

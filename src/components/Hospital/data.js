@@ -3,6 +3,7 @@ const columns = [
   { name: "CATEGORY", uid: "category", sortable: true },
   { name: "AVAILABILITY", uid: "availability", sortable: true },
   { name: "DISCHARGES", uid: "discharges", sortable: true },
+  { name: "AVAILABLE BEDS", uid: "availableBeds", sortable: true }, // New column
   { name: "ACTIONS", uid: "actions" },
 ];
 
@@ -18,6 +19,7 @@ const users = [
     category: "Cancer Specialist",
     availability: "Available",
     discharges: "250",
+    availableBeds: "50", // New data
   },
   {
     id: 2,
@@ -25,6 +27,7 @@ const users = [
     category: "Cardiology",
     availability: "NotAvailable",
     discharges: "180",
+    availableBeds: "0", // New data
   },
   {
     id: 3,
@@ -32,6 +35,7 @@ const users = [
     category: "Pediatrics",
     availability: "Available",
     discharges: "300",
+    availableBeds: "30", // New data
   },
   {
     id: 4,
@@ -39,6 +43,7 @@ const users = [
     category: "Orthopedics",
     availability: "Available",
     discharges: "220",
+    availableBeds: "20", // New data
   },
   {
     id: 5,
@@ -46,6 +51,7 @@ const users = [
     category: "Neurology",
     availability: "NotAvailable",
     discharges: "150",
+    availableBeds: "0", // New data
   },
   {
     id: 6,
@@ -53,6 +59,7 @@ const users = [
     category: "Dermatology",
     availability: "Available",
     discharges: "90",
+    availableBeds: "15", // New data
   },
   {
     id: 7,
@@ -60,6 +67,7 @@ const users = [
     category: "Oncology",
     availability: "Available",
     discharges: "200",
+    availableBeds: "25", // New data
   },
   {
     id: 8,
@@ -67,13 +75,15 @@ const users = [
     category: "Gastroenterology",
     availability: "Available",
     discharges: "140",
+    availableBeds: "40", // New data
   },
   {
     id: 9,
     name: "Brighton Health Clinic",
     category: "Psychiatry",
-    availability: "Not Available",
+    availability: "NotAvailable",
     discharges: "110",
+    availableBeds: "5", // New data
   },
   {
     id: 10,
@@ -81,6 +91,7 @@ const users = [
     category: "Radiology",
     availability: "Available",
     discharges: "175",
+    availableBeds: "10", // New data
   },
 ];
 
