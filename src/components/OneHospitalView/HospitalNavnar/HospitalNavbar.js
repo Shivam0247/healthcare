@@ -143,7 +143,7 @@ function HospitalNavbar() {
       </aside>
 
       {/* Main content area */}
-      <div className="p-4 sm:ml-64 ">
+      <div className="p-4 sm:ml-64 overflow-hidden">
         <Routes>
           <Route path="/Dashboard" element={<Dashboard />} />
           <Route path="/Doctors" element={<Doctor />} />
