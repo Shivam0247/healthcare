@@ -26,12 +26,18 @@ import { columns, users, statusOptions } from "./data";
 import { capitalize } from "./util";
 
 const statusColorMap = {
-  active: "success",
-  paused: "danger",
-  vacation: "warning",
+  Open: "success",
+  Closed: "danger",
 };
 
-const INITIAL_VISIBLE_COLUMNS = ["name", "category", "status", "actions"];
+const INITIAL_VISIBLE_COLUMNS = [
+  "name",
+  "phone",
+  "address",
+  "shopStatus",
+  "operatingHours",
+  "actions",
+];
 
 export default function Chemist() {
   const [filterValue, setFilterValue] = React.useState("");
@@ -117,11 +123,11 @@ export default function Chemist() {
             <p className="text-bold text-small capitalize">{cellValue}</p>
           </div>
         );
-      case "status":
+      case "shopStatus":
         return (
           <Chip
             className="capitalize"
-            color={statusColorMap[user.status]}
+            color={statusColorMap[user.shopStatus]}
             size="sm"
             variant="flat"
           >
