@@ -1,12 +1,10 @@
-import React from "react";
-
 const columns = [
   { name: "ID", uid: "id", sortable: true },
   { name: "NAME", uid: "name", sortable: true },
   { name: "PHONE NO", uid: "phone", sortable: true },
   { name: "ADDRESS", uid: "address" },
   { name: "SHOP STATUS", uid: "shopStatus" },
-  { name: "OPERATING HOURS", uid: "operatingHours" }, // New column for operating hours
+  { name: "OPERATING HOURS", uid: "operatingHours" },
   { name: "ACTIONS", uid: "actions" },
 ];
 
@@ -23,183 +21,183 @@ const operatingHoursOptions = [
 const users = [
   {
     id: 1,
-    name: "Tony Reichert",
+    name: "Tony's Pharmacy",
     phone: "+1234567890",
     address: "123 Elm Street, Springfield",
     status: "active",
     shopStatus: "Open",
-    operatingHours: "24 Hours", // New field for operating hours
+    operatingHours: "24 Hours",
   },
   {
     id: 2,
-    name: "Zoey Lang",
+    name: "Zoey's Drugstore",
     phone: "+1234567891",
     address: "456 Oak Avenue, Springfield",
     status: "paused",
     shopStatus: "Closed",
-    operatingHours: "Daylight", // New field for operating hours
+    operatingHours: "Daylight",
   },
   {
     id: 3,
-    name: "Jane Fisher",
+    name: "Jane's Chemist",
     phone: "+1234567892",
     address: "789 Pine Road, Springfield",
     status: "active",
     shopStatus: "Open",
-    operatingHours: "24 Hours", // New field for operating hours
+    operatingHours: "24 Hours",
   },
   {
     id: 4,
-    name: "William Howard",
+    name: "William's Remedies",
     phone: "+1234567893",
     address: "101 Maple Lane, Springfield",
     status: "vacation",
     shopStatus: "Closed",
-    operatingHours: "Daylight", // New field for operating hours
+    operatingHours: "Daylight",
   },
   {
     id: 5,
-    name: "Kristen Copper",
+    name: "Kristen's Pharmacy",
     phone: "+1234567894",
     address: "202 Birch Boulevard, Springfield",
     status: "active",
     shopStatus: "Open",
-    operatingHours: "24 Hours", // New field for operating hours
+    operatingHours: "24 Hours",
   },
   {
     id: 6,
-    name: "Brian Kim",
+    name: "Brian's Drugstore",
     phone: "+1234567895",
     address: "303 Cedar Street, Springfield",
     status: "active",
     shopStatus: "Open",
-    operatingHours: "24 Hours", // New field for operating hours
+    operatingHours: "24 Hours",
   },
   {
     id: 7,
-    name: "Michael Hunt",
+    name: "Michael's Chemist",
     phone: "+1234567896",
     address: "404 Spruce Avenue, Springfield",
     status: "paused",
     shopStatus: "Closed",
-    operatingHours: "Daylight", // New field for operating hours
+    operatingHours: "Daylight",
   },
   {
     id: 8,
-    name: "Samantha Brooks",
+    name: "Samantha's Remedies",
     phone: "+1234567897",
     address: "505 Fir Road, Springfield",
     status: "active",
     shopStatus: "Open",
-    operatingHours: "24 Hours", // New field for operating hours
+    operatingHours: "24 Hours",
   },
   {
     id: 9,
-    name: "Frank Harrison",
+    name: "Frank's Pharmacy",
     phone: "+1234567898",
     address: "606 Aspen Lane, Springfield",
     status: "vacation",
     shopStatus: "Closed",
-    operatingHours: "Daylight", // New field for operating hours
+    operatingHours: "Daylight",
   },
   {
     id: 10,
-    name: "Emma Adams",
+    name: "Emma's Drugstore",
     phone: "+1234567899",
     address: "707 Redwood Street, Springfield",
     status: "active",
     shopStatus: "Open",
-    operatingHours: "24 Hours", // New field for operating hours
+    operatingHours: "24 Hours",
   },
   {
     id: 11,
-    name: "Brandon Stevens",
+    name: "Brandon's Remedies",
     phone: "+1234567800",
     address: "808 Willow Avenue, Springfield",
     status: "active",
     shopStatus: "Open",
-    operatingHours: "24 Hours", // New field for operating hours
+    operatingHours: "24 Hours",
   },
   {
     id: 12,
-    name: "Megan Richards",
+    name: "Megan's Chemist",
     phone: "+1234567801",
     address: "909 Poplar Road, Springfield",
     status: "paused",
     shopStatus: "Closed",
-    operatingHours: "Daylight", // New field for operating hours
+    operatingHours: "Daylight",
   },
   {
     id: 13,
-    name: "Oliver Scott",
+    name: "Oliver's Pharmacy",
     phone: "+1234567802",
     address: "1010 Elm Street, Springfield",
     status: "active",
     shopStatus: "Open",
-    operatingHours: "24 Hours", // New field for operating hours
+    operatingHours: "24 Hours",
   },
   {
     id: 14,
-    name: "Grace Allen",
+    name: "Grace's Drugstore",
     phone: "+1234567803",
     address: "1111 Oak Avenue, Springfield",
     status: "active",
     shopStatus: "Open",
-    operatingHours: "24 Hours", // New field for operating hours
+    operatingHours: "24 Hours",
   },
   {
     id: 15,
-    name: "Noah Carter",
+    name: "Noah's Remedies",
     phone: "+1234567804",
     address: "1212 Pine Road, Springfield",
     status: "paused",
     shopStatus: "Closed",
-    operatingHours: "Daylight", // New field for operating hours
+    operatingHours: "Daylight",
   },
   {
     id: 16,
-    name: "Ava Perez",
+    name: "Ava's Chemist",
     phone: "+1234567805",
     address: "1313 Maple Lane, Springfield",
     status: "active",
     shopStatus: "Open",
-    operatingHours: "24 Hours", // New field for operating hours
+    operatingHours: "24 Hours",
   },
   {
     id: 17,
-    name: "Liam Johnson",
+    name: "Liam's Pharmacy",
     phone: "+1234567806",
     address: "1414 Birch Boulevard, Springfield",
     status: "active",
     shopStatus: "Open",
-    operatingHours: "24 Hours", // New field for operating hours
+    operatingHours: "24 Hours",
   },
   {
     id: 18,
-    name: "Sophia Taylor",
+    name: "Sophia's Drugstore",
     phone: "+1234567807",
     address: "1515 Cedar Street, Springfield",
     status: "active",
     shopStatus: "Open",
-    operatingHours: "24 Hours", // New field for operating hours
+    operatingHours: "24 Hours",
   },
   {
     id: 19,
-    name: "Lucas Harris",
+    name: "Lucas's Remedies",
     phone: "+1234567808",
     address: "1616 Spruce Avenue, Springfield",
     status: "vacation",
     shopStatus: "Closed",
-    operatingHours: "Daylight", // New field for operating hours
+    operatingHours: "Daylight",
   },
   {
     id: 20,
-    name: "Isabella Lewis",
+    name: "Isabella's Pharmacy",
     phone: "+1234567809",
     address: "1717 Fir Road, Springfield",
     status: "active",
     shopStatus: "Open",
-    operatingHours: "24 Hours", // New field for operating hours
+    operatingHours: "24 Hours",
   },
 ];
 
