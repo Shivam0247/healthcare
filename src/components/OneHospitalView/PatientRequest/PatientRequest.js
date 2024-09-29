@@ -94,7 +94,7 @@ function PatientRequest() {
             Requested Date: 2024-09-28
           </p>
           <p class="font-normal text-gray-700 dark:text-gray-400">
-            Priority: Traffic Police
+            Department: Traffic Police
           </p>
 
           <div className="btn mt-5">
