@@ -9,6 +9,7 @@ import Patient from "../Patient/Patient";
 import Dashboard from "../Dashboard/Dashboard";
 import PatientRequest from "../PatientRequest/PatientRequest";
 import InventoryAssign from "../InventoryAssign/InventoryAssign";
+import Maintenance from "../Maintenance/Maintenance";
 function HospitalNavbar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -135,6 +136,20 @@ function HospitalNavbar() {
             </li>
             <li>
               <Link
+                to="/Admin/Maintenance"
+                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              >
+                <i
+                  class="fi fi-bs-holding-hand-gear"
+                  style={{ fontSize: "20px" }}
+                ></i>
+                <span className="flex-1 ms-3 whitespace-nowrap">
+                  Under Maintenance
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link
                 to="/Admin/Inventoryrequest"
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
@@ -165,6 +180,8 @@ function HospitalNavbar() {
           <Route path="/PoliceOfficer" element={<Doctor />} />
           <Route path="/Inventory" element={<Patient />} />
           <Route path="/Inventoryassign" element={<InventoryAssign />} />
+          <Route path="/Maintenance" element={<Maintenance />} />
+
           <Route path="/Inventoryrequest" element={<PatientRequest />} />
           {/* <Route path="/Hospital/HospitalView" element={<HospitalView />} />
           <Route path="/Chemist/ChemistView" element={<ChemistView />} /> */}
