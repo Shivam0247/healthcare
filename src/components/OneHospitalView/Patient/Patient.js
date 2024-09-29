@@ -258,7 +258,7 @@ export default function Patient() {
         </div>
         <div className="flex justify-between items-center">
           <span className="text-default-400 text-small">
-            Total {users.length} Hospitals
+            Total {users.length} Items
           </span>
           <label className="flex items-center text-default-400 text-small">
             Rows per page:

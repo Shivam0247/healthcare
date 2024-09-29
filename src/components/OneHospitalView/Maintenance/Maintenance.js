@@ -260,7 +260,7 @@ export default function Maintenance() {
         </div>
         <div className="flex justify-between items-center">
           <span className="text-default-400 text-small">
-            Total {users.length} Hospitals
+            Total {users.length} Item Under Maintenance
           </span>
           <label className="flex items-center text-default-400 text-small">
             Rows per page:
