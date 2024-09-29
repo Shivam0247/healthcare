@@ -3,25 +3,25 @@ import ApexCharts from "react-apexcharts";
 
 const metricsData = [
   {
-    title: "Appointment",
-    value: "250",
+    title: "Total Stock",
+    value: "274",
     upward: true,
     percent: "1.8%",
   },
   {
-    title: "New Patients",
+    title: "In Use Stock",
     value: "140",
     upward: true,
     percent: "2.5%",
   },
   {
-    title: "Operation",
+    title: "Available",
     value: "56",
     upward: false,
     percent: "5.2%",
   },
   {
-    title: "Beds Available",
+    title: "Under Maintenance",
     value: "78",
     upward: true,
     percent: "2.2%",
@@ -32,7 +32,7 @@ const barChartOptions = {
   colors: ["#1A56DB", "#FDBA8C"],
   series: [
     {
-      name: "Male",
+      name: "Equipment",
       color: "#1A56DB",
       data: [
         { x: "Mon", y: 231 },
@@ -45,7 +45,7 @@ const barChartOptions = {
       ],
     },
     {
-      name: "Female",
+      name: "Vehicle",
       color: "#FDBA8C",
       data: [
         { x: "Mon", y: 232 },
@@ -363,7 +363,7 @@ export default function Dashboard() {
                 </svg>
               </div>
               <div className="text-base font-semibold text-gray-900 dark:text-white">
-                Patients visited by their Gender
+                Stock used by their category
               </div>
             </div>
             <ApexCharts
@@ -388,7 +388,7 @@ export default function Dashboard() {
                   </svg>
                 </div>
                 <div className="text-base font-semibold text-gray-900 dark:text-white">
-                  Patient Files
+                  First Information Report (FIR)
                 </div>
               </div>
               <ApexCharts
@@ -412,7 +412,7 @@ export default function Dashboard() {
                   </svg>
                 </div>
                 <div className="text-base font-semibold text-gray-900 dark:text-white">
-                  Patient Department
+                  Police Department
                 </div>
               </div>
               <ApexCharts
@@ -426,28 +426,28 @@ export default function Dashboard() {
               <div class="inline-flex items-center mr-5">
                 <span class="size-2.5 inline-block bg-[rgba(254,176,25,1)] rounded-sm me-2"></span>
                 <span class="text-[13px] text-gray-600 dark:text-neutral-400">
-                  Neurology
+                  Community Policing Department
                 </span>
               </div>
 
               <div class="inline-flex items-center mr-5">
                 <span class="size-2.5 inline-block bg-[rgba(0,143,251,1)] rounded-sm me-2"></span>
                 <span class="text-[13px] text-gray-600 dark:text-neutral-400">
-                  Dental Care
+                  Cyber Crime Unit
                 </span>
               </div>
 
               <div class="inline-flex items-center mr-5">
                 <span class="size-2.5 inline-block bg-[rgba(0,227,150,1)] rounded-sm me-2"></span>
                 <span class="text-[13px] text-gray-600 dark:text-neutral-400">
-                  Gynecology
+                  Traffic Division
                 </span>
               </div>
 
               <div class="inline-flex items-center mr-5">
                 <span class="size-2.5 inline-block bg-[rgba(255,69,96,1)] rounded-sm me-2"></span>
                 <span class="text-[13px] text-gray-600 dark:text-neutral-400">
-                  Orthopedic
+                  CID
                 </span>
               </div>
             </div>
