@@ -15,7 +15,7 @@ function PatientRequest() {
       </div>
 
       <div className="allcards flex flex-wrap">
-        <div class="block w-[38vw] p-6 border bg-[#00800036] border-gray-200 rounded-lg shadow  dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 mr-3 mt-3 bg-[#ff00003b]">
+        <div class="block w-[38vw] p-6 border border-gray-200 rounded-lg shadow  dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 mr-3 mt-3 bg-[#ff00003b]">
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             Kolar Road Police Station
           </h5>
@@ -29,7 +29,7 @@ function PatientRequest() {
             Requested Date: 2024-09-28
           </p>
           <p class="font-normal text-gray-700 dark:text-gray-400">
-            Priority: High
+            Department: Special Force
           </p>
 
           <div className="btn mt-5">
@@ -62,7 +62,7 @@ function PatientRequest() {
             Requested Date: 2024-09-28
           </p>
           <p class="font-normal text-gray-700 dark:text-gray-400">
-            Priority: Medium
+            Department: Local Police
           </p>
 
           <div className="btn mt-5">
@@ -94,7 +94,7 @@ function PatientRequest() {
             Requested Date: 2024-09-28
           </p>
           <p class="font-normal text-gray-700 dark:text-gray-400">
-            Priority: Low
+            Priority: Traffic Police
           </p>
 
           <div className="btn mt-5">
