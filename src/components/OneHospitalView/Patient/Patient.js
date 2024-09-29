@@ -26,15 +26,16 @@ import { capitalize } from "./util";
 
 const statusColorMap = {
   Available: "success",
-  NotAvailable: "danger",
+  "In Use": "danger",
+  "Under Maintenance": "warning",
+  "Out of Stock": "default",
 };
 
 const INITIAL_VISIBLE_COLUMNS = [
-  "name",
-  "age",
+  "itemName",
+  "quantity",
+  "category",
   "status",
-  "email",
-  "contact",
   "actions",
 ];
 
@@ -126,22 +127,16 @@ export default function Patient() {
             <p className="text-bold text-small capitalize">{cellValue}</p>
           </div>
         );
-      case "availability":
+      case "status":
         return (
           <Chip
             className="capitalize"
-            color={statusColorMap[cellValue] || "default"} // Fallback color
+            color={statusColorMap[cellValue] || "default"} // Use statusColorMap
             size="sm"
             variant="flat"
           >
             {cellValue}
           </Chip>
-        );
-      case "Discharged":
-        return (
-          <div className="flex flex-col">
-            <p className="text-bold text-small capitalize">{cellValue}</p>
-          </div>
         );
       case "actions":
         return (
@@ -154,8 +149,6 @@ export default function Patient() {
               </DropdownTrigger>
               <DropdownMenu>
                 <DropdownItem onPress={NavigateToView}>View</DropdownItem>
-                {/* <DropdownItem>Edit</DropdownItem>
-                <DropdownItem>Delete </DropdownItem> */}
               </DropdownMenu>
             </Dropdown>
           </div>
@@ -309,10 +302,11 @@ export default function Patient() {
         />
       </div>
     );
-  }, [page, pages, selectedKeys.size, filteredItems.length]);
+  }, [page, pages, selectedKeys.size, filteredItems.length, users.length]);
 
   return (
-    <div>
+    <>
+      {" "}
       <div className="flex flex-col flex-wrap gap-4 mb-[2em]">
         <Breadcrumbs size="md">
           <BreadcrumbItem href="/Hospital/Dashboard">Dashboard</BreadcrumbItem>
@@ -322,18 +316,17 @@ export default function Patient() {
       <div className="flex flex-col gap-4 mb-8 flex-wrap">
         <h1 className="text-3xl font-bold text-gray-800">Inventory</h1>
       </div>
-
       <Table
-        aria-label="Example table with custom cells, pagination and sorting"
-        bottomContent={bottomContent}
-        bottomContentPlacement="outside"
-        selectedKeys={Array.from(selectedKeys)} // Convert Set to Array
-        selectionMode="multiple"
+        isHeaderSticky
+        aria-label="Example table with dynamic content"
         sortDescriptor={sortDescriptor}
+        selectedKeys={selectedKeys}
+        bottomContent={bottomContent}
         topContent={topContent}
-        topContentPlacement="outside"
         onSelectionChange={setSelectedKeys}
         onSortChange={setSortDescriptor}
+        selectionMode="multiple"
+        onRowAction={() => {}}
       >
         <TableHeader columns={headerColumns}>
           {(column) => (
@@ -342,20 +335,20 @@ export default function Patient() {
               align={column.uid === "actions" ? "center" : "start"}
               allowsSorting={column.sortable}
             >
-              {column.name}
+              {capitalize(column.name)}
             </TableColumn>
           )}
         </TableHeader>
-        <TableBody emptyContent={"No users found"} items={sortedItems}>
-          {(item) => (
-            <TableRow key={item.id}>
+        <TableBody items={sortedItems}>
+          {(user) => (
+            <TableRow key={user.id}>
               {(columnKey) => (
-                <TableCell>{renderCell(item, columnKey)}</TableCell>
+                <TableCell>{renderCell(user, columnKey)}</TableCell>
               )}
             </TableRow>
           )}
         </TableBody>
       </Table>
-    </div>
+    </>
   );
 }
