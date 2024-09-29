@@ -37,13 +37,13 @@ import { columns, users, statusOptions } from "./data";
 import { capitalize } from "./util";
 
 const statusColorMap = {
-  Available: "success",
-  NotAvailable: "danger",
+  "On Duty": "success",
+  "Off Duty": "danger",
 };
 
 const INITIAL_VISIBLE_COLUMNS = [
   "name",
-  "specialist",
+  "rank",
   "availability",
   "email",
   "contact",
@@ -401,18 +401,18 @@ export default function Doctor() {
           {(onClose) => (
             <>
               <ModalHeader className="flex flex-col gap-1">
-                Add Doctor
+                Add Police officer
               </ModalHeader>
               <ModalBody className="flex flex-row flex-wrap sm:flex-nowrap gap-4">
                 <Input
                   autoFocus
                   label="Name"
-                  placeholder="Enter Doctor's name"
+                  placeholder="Enter officer's name"
                   variant="bordered"
                 />
                 <Input
-                  label="Specialist"
-                  placeholder="Enter Doctor's Specialist"
+                  label="Rank"
+                  placeholder="Enter officer's Rank"
                   variant="bordered"
                 />
               </ModalBody>
@@ -420,12 +420,12 @@ export default function Doctor() {
                 <Input
                   label="Email"
                   type="Email"
-                  placeholder="Enter Doctor's Email"
+                  placeholder="Enter officer's Email"
                   variant="bordered"
                 />
                 <Input
                   label="Contact"
-                  placeholder="Enter Doctor's Contact No."
+                  placeholder="Enter officer's Contact No."
                   variant="bordered"
                 />
               </ModalBody>
