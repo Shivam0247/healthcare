@@ -22,7 +22,7 @@ const metricsData = [
   },
   {
     title: "Under Maintenance",
-    value: "78",
+    value: "10",
     upward: true,
     percent: "2.2%",
   },
