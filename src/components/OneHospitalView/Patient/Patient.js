@@ -258,9 +258,9 @@ export default function Patient() {
                 ))}
               </DropdownMenu>
             </Dropdown>
-            {/* <Button color="primary" endContent={<PlusIcon />}>
+            <Button color="primary" endContent={<PlusIcon />}>
               Add New
-            </Button> */}
+            </Button>
           </div>
         </div>
         <div className="flex justify-between items-center">
@@ -315,12 +315,12 @@ export default function Patient() {
     <div>
       <div className="flex flex-col flex-wrap gap-4 mb-[2em]">
         <Breadcrumbs size="md">
-          <BreadcrumbItem href="/">Dashboard</BreadcrumbItem>
-          <BreadcrumbItem>Patients</BreadcrumbItem>
+          <BreadcrumbItem href="/Hospital/Dashboard">Dashboard</BreadcrumbItem>
+          <BreadcrumbItem>Inventory</BreadcrumbItem>
         </Breadcrumbs>
       </div>
       <div className="flex flex-col gap-4 mb-8 flex-wrap">
-        <h1 className="text-3xl font-bold text-gray-800">Patients</h1>
+        <h1 className="text-3xl font-bold text-gray-800">Inventory</h1>
       </div>
 
       <Table

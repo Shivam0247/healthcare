@@ -343,12 +343,12 @@ export default function Doctor() {
     <>
       <div className="flex flex-col flex-wrap gap-4 mb-[2em]">
         <Breadcrumbs size="md">
-          <BreadcrumbItem href="/">Dashboard</BreadcrumbItem>
-          <BreadcrumbItem>Doctors</BreadcrumbItem>
+          <BreadcrumbItem href="/Hospital/Dashboard">Dashboard</BreadcrumbItem>
+          <BreadcrumbItem>Police Officer</BreadcrumbItem>
         </Breadcrumbs>
       </div>
       <div className="flex flex-col gap-4 mb-8 flex-wrap">
-        <h1 className="text-3xl font-bold text-gray-800">Doctors</h1>
+        <h1 className="text-3xl font-bold text-gray-800">Police Officer</h1>
       </div>
 
       <Table

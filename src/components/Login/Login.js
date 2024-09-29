@@ -15,21 +15,22 @@ export default function Login() {
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log(email);
-    console.log(password);
+    // e.preventDefault();
+    // console.log(email);
+    // console.log(password);
 
-    try {
-      const result = await loginUser(email, password);
+    // try {
+    //   const result = await loginUser(email, password);
 
-      if (result && result.success) {
-        navigate("/user/Dashboard");
-      } else {
-        console.error("Login failed:", result?.error || "Unknown error");
-      }
-    } catch (error) {
-      console.error("Error during login:", error);
-    }
+    //   if (result && result.success) {
+    //     console.log("hello");
+    navigate("/Hospital/Dashboard");
+    //   } else {
+    //     console.error("Login failed:", result?.error || "Unknown error");
+    //   }
+    // } catch (error) {
+    //   console.error("Error during login:", error);
+    // }
   };
 
   return (
@@ -167,6 +168,7 @@ export default function Login() {
                       <button
                         type="submit"
                         class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        onClick={handleSubmit}
                       >
                         Sign in
                       </button>

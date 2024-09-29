@@ -98,30 +98,15 @@ function HospitalNavbar() {
             </li>
             <li>
               <Link
-                to="/Hospital/Doctors"
+                to="/Hospital/PoliceOfficer"
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
-                <i class="fa-solid fa-stethoscope"></i>
-                <span className="flex-1 ms-3 whitespace-nowrap">Doctors</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/Hospital/Patients"
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-              >
-                <i class="fa-solid fa-bed"></i>{" "}
-                <span className="flex-1 ms-3 whitespace-nowrap">Patients</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/Hospital/Patientsrequest"
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-              >
-                <i class="fa-solid fa-code-pull-request"></i>{" "}
+                <i
+                  class="fi fi-bs-user-police"
+                  style={{ fontSize: "20px" }}
+                ></i>{" "}
                 <span className="flex-1 ms-3 whitespace-nowrap">
-                  Patient Request
+                  Police Officer
                 </span>
               </Link>
             </li>
@@ -130,10 +115,25 @@ function HospitalNavbar() {
                 to="/Hospital/Inventory"
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
-                <i className="fa-solid fa-flask-vial"></i>
+                <i
+                  class="fi fi-br-inventory-alt"
+                  style={{ fontSize: "20px" }}
+                ></i>{" "}
                 <span className="flex-1 ms-3 whitespace-nowrap">Inventory</span>
               </Link>
             </li>
+            <li>
+              <Link
+                to="/Hospital/Inventoryrequest"
+                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              >
+                <i class="fa-solid fa-code-pull-request"></i>{" "}
+                <span className="flex-1 ms-3 whitespace-nowrap">
+                  Inventory Request
+                </span>
+              </Link>
+            </li>
+
             <li>
               <Link
                 to="#"
@@ -151,9 +151,9 @@ function HospitalNavbar() {
       <div className="p-4 sm:ml-64 overflow-hidden">
         <Routes>
           <Route path="/Dashboard" element={<Dashboard />} />
-          <Route path="/Doctors" element={<Doctor />} />
-          <Route path="/Patients" element={<Patient />} />
-          <Route path="/Patientsrequest" element={<PatientRequest />} />
+          <Route path="/PoliceOfficer" element={<Doctor />} />
+          <Route path="/Inventory" element={<Patient />} />
+          <Route path="/Inventoryrequest" element={<PatientRequest />} />
           {/* <Route path="/Hospital/HospitalView" element={<HospitalView />} />
           <Route path="/Chemist/ChemistView" element={<ChemistView />} /> */}
         </Routes>
