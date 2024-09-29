@@ -24,7 +24,7 @@ export default function Login() {
 
     //   if (result && result.success) {
     //     console.log("hello");
-    navigate("/Hospital/Dashboard");
+    navigate("/Admin/Dashboard");
     //   } else {
     //     console.error("Login failed:", result?.error || "Unknown error");
     //   }
@@ -36,7 +36,11 @@ export default function Login() {
   return (
     <div className="flex w-full h-[100vh] justify-center items-center flex-col bg-gray-50">
       <Tabs aria-label="Options" className="w-[85vw] sm:w-[40vw]">
-        <Tab key="Admin" title="Admin" className="w-[85vw] sm:w-[40vw]">
+        <Tab
+          key="Super Admin"
+          title="Super Admin"
+          className="w-[85vw] sm:w-[40vw]"
+        >
           <Card>
             <CardBody className="overflow-x-hidden">
               <div class="flex w-[100%] sm:w-[100%] min-h-full flex-col justify-center px-6 pb-[6rem] lg:px-8">
@@ -107,7 +111,7 @@ export default function Login() {
             </CardBody>
           </Card>
         </Tab>
-        <Tab key="Hospital" title="Hospital" className="w-[85vw] sm:w-[40vw]">
+        <Tab key="Admin" title="Admin" className="w-[85vw] sm:w-[40vw]">
           <Card>
             <CardBody className="overflow-x-hidden">
               <div class="flex w-[100%] sm:w-[100%] min-h-full flex-col justify-center px-6 pb-[6rem] lg:px-8">
@@ -179,7 +183,11 @@ export default function Login() {
             </CardBody>
           </Card>
         </Tab>
-        <Tab key="User" title="User" className="w-[85vw] sm:w-[40vw]">
+        <Tab
+          key="Police Station"
+          title="Police Station"
+          className="w-[85vw] sm:w-[40vw]"
+        >
           <Card>
             <CardBody className="overflow-x-hidden">
               <div class="flex w-[100%] sm:w-[100%] min-h-full flex-col justify-center px-6 pb-[6rem] lg:px-8">

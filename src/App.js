@@ -21,7 +21,7 @@ function App() {
             <Route path="/" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/user/*" element={<Navbar />} />
-            <Route path="/Hospital/*" element={<HospitalNavbar />} />
+            <Route path="/Admin/*" element={<HospitalNavbar />} />
           </Routes>
         </Router>
       </UserState>

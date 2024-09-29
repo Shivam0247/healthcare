@@ -71,10 +71,7 @@ function HospitalNavbar() {
             </svg>
           </button>
 
-          <a
-            href="/Hospital/Dashboard"
-            className="flex items-center ps-2.5 mb-5"
-          >
+          <a href="/Admin/Dashboard" className="flex items-center ps-2.5 mb-5">
             {/* <i class="fa-solid fa-link h-6 me-3 sm:h-7 text-[26px] text-blue-800"></i> */}
             <img
               src="https://flowbite.com/docs/images/logo.svg"
@@ -82,14 +79,14 @@ function HospitalNavbar() {
               alt="Flowbite Logo"
             />
             <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white ">
-              HealthLink
+              AssetAssure
             </span>
           </a>
 
           <ul className="space-y-2 font-medium">
             <li>
               <Link
-                to="/Hospital/Dashboard"
+                to="/Admin/Dashboard"
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <i className="fa-solid fa-house"></i>
@@ -98,7 +95,7 @@ function HospitalNavbar() {
             </li>
             <li>
               <Link
-                to="/Hospital/PoliceOfficer"
+                to="/Admin/PoliceOfficer"
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <i
@@ -112,7 +109,7 @@ function HospitalNavbar() {
             </li>
             <li>
               <Link
-                to="/Hospital/Inventory"
+                to="/Admin/Inventory"
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <i
@@ -124,7 +121,7 @@ function HospitalNavbar() {
             </li>
             <li>
               <Link
-                to="/Hospital/Inventoryassign"
+                to="/Admin/Inventoryassign"
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <i
@@ -138,7 +135,7 @@ function HospitalNavbar() {
             </li>
             <li>
               <Link
-                to="/Hospital/Inventoryrequest"
+                to="/Admin/Inventoryrequest"
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <i class="fa-solid fa-code-pull-request"></i>{" "}
